@@ -1,7 +1,8 @@
 import spock.lang.Specification
 
+// Idea is to see if there are 2 numbers in array that sum to the sum
 @SuppressWarnings("GroovyPointlessBoolean")
-class B_ArrayAddsToNumberSpec extends Specification {
+class B_ArrayHasTwoElementsThatAddToNumberSpec extends Specification {
 
     def'empty array returns false'(){
         given:
@@ -9,7 +10,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 8
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == false
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == false
     }
 
     def'zero sum returns false'(){
@@ -18,7 +19,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 0
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == false
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == false
     }
 
     def'single int array found returns true'(){
@@ -27,7 +28,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 8
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 
     def'less than array not found returns false'(){
@@ -36,7 +37,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 2
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == false
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == false
     }
 
     def'more than array not found returns false'(){
@@ -45,7 +46,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 20
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == false
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == false
     }
 
     def'within array not found returns false'(){
@@ -54,7 +55,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 5
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == false
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == false
     }
 
     def'sum edge unsorted returns true'(){
@@ -63,7 +64,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 14
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 
     def'sum edge sorted returns true'(){
@@ -72,7 +73,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 13
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 
     def'sum centre sorted returns true'(){
@@ -80,7 +81,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int[] array = [10,5,7,3,6,4]
         int sum = 10
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 
     def'sum edge  and inner sorted returns true'(){
@@ -89,7 +90,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 17
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 
     def'sum inner sorted returns true'(){
@@ -98,7 +99,7 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = 8
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 
     def'negative sum found returns true'(){
@@ -106,6 +107,6 @@ class B_ArrayAddsToNumberSpec extends Specification {
         int sum = -3
 
         expect:
-        B_ArrayAddsToNumber.check(array,sum) == true
+        B_ArrayHasTwoElementsThatAddToNumber.check(array,sum) == true
     }
 }
