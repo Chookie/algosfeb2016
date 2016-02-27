@@ -41,7 +41,7 @@ class A_UnbalancedBracesSpec extends Specification{
     def'First and last characters are balanced braces'(){
         given:
         String input = '((abc)f(def))'
-        String result = '((abc)(def))'
+        String result = '((abc)f(def))'
 
         expect:
         A_UnbalancedBraces.balance(input) == result
@@ -50,7 +50,7 @@ class A_UnbalancedBracesSpec extends Specification{
     def'Empty string'(){
         given:
         String input = '((abc)f(def))'
-        String result = '((abc)(def))'
+        String result = '((abc)f(def))'
 
         expect:
         A_UnbalancedBraces.balance(input) == result
@@ -59,7 +59,7 @@ class A_UnbalancedBracesSpec extends Specification{
     def'Null string'(){
         given:
         String input = '((abc)f(def))'
-        String result = '((abc)(def))'
+        String result = '((abc)f(def))'
 
         expect:
         A_UnbalancedBraces.balance(input) == result
