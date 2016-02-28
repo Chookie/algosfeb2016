@@ -3,7 +3,7 @@ import spock.lang.Specification
 /**
  * Facebook interview 1
  */
-class A_UnbalancedBracesSpec extends Specification{
+class A_FB_UnbalancedBracesSpec extends Specification{
 
     def'Too many left'(){
         given:
@@ -11,7 +11,7 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = 'a(abc)(def)e'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 
     def'First character is unbalanced brace'(){
@@ -20,7 +20,7 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = '(abc)(def)f'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 
     def'Last character is unbalanced brace'(){
@@ -29,7 +29,7 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = 'f(abc)(def)'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 
     def'First and last characters are unbalanced brace'(){
@@ -38,7 +38,7 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = '(abc)(def)'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 
     def'First and last characters are balanced braces'(){
@@ -47,7 +47,7 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = '((abc)f(def))'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 
     def'Empty string'(){
@@ -56,7 +56,7 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = '((abc)f(def))'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 
     def'Null string'(){
@@ -65,6 +65,6 @@ class A_UnbalancedBracesSpec extends Specification{
         String result = '((abc)f(def))'
 
         expect:
-        A_UnbalancedBraces.balance(input) == result
+        A_FB_UnbalancedBraces.balance(input) == result
     }
 }
