@@ -5,7 +5,7 @@ import spock.lang.Specification
  */
 class H_FindPermutationsSpec extends Specification {
 
-    def'find all permutations is successfull'(){
+    def'find all permutations is successful'(){
         given:
         def input = 'cba'
         def permutations = ['cba', 'bca', 'bac','cab','acb','abc']
