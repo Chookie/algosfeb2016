@@ -15,7 +15,7 @@ class E_EncodeSpaceInStrings extends Specification {
         char[] encoded = "Mr%20John%20Smith".toCharArray();
 
         when:
-        char[] result = F_EncodeSpacesInString.encode(unencoded,length);
+        char[] result = E_EncodeSpacesInString.encode(unencoded,length);
 
         then:
         result == encoded;

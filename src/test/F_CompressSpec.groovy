@@ -11,18 +11,28 @@ import spock.lang.Unroll
 class F_CompressSpec extends Specification {
 
     @Unroll
-    def '#input #testcase is smaller returns #result'() {
-        given:
-        def raw = "aabcccccaaa";
-        def compressed = "a2b1c5a3";
+    def 'compressOne #input #testcase returns #result'() {
 
         expect:
-        F_Compress.compressOne(raw) == compressed;
+        F_Compress.compressOne(input) == result;
 
         where:
         input           | testcase                  ||  result
         'aabcccccaaa'   | 'converted is smaller'    ||  'a2b1c5a3'
-        'aabbccddee '   | 'converted is same'       ||  'aabbccddee'
+        'aabbccddee'    | 'converted is same'       ||  'aabbccddee'
+        'abcdef'        | 'no repeats'              ||  'abcdef'
+    }
+
+    @Unroll
+    def 'compressTwo #input #testcase returns #result'() {
+
+        expect:
+        F_Compress.compressTwo(input) == result;
+
+        where:
+        input           | testcase                  ||  result
+        'aabcccccaaa'   | 'converted is smaller'    ||  'a2b1c5a3'
+        'aabbccddee'    | 'converted is same'       ||  'aabbccddee'
         'abcdef'        | 'no repeats'              ||  'abcdef'
     }
 }

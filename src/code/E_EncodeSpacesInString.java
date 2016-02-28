@@ -4,7 +4,7 @@
  * Assume the length you are given is the true length so can hold additional characters.
  * In java use character array so can do in-place.
  */
-public class F_EncodeSpacesInString {
+public class E_EncodeSpacesInString {
     public static char[] encode(char[] input, int length) {
         if(input.length ==0 || length == 0){
             return input;
