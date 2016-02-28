@@ -1,4 +1,5 @@
 import spock.lang.Specification
+import spock.lang.Unroll
 
 
 /**
@@ -11,6 +12,7 @@ import spock.lang.Specification
 @SuppressWarnings("GroovyPointlessBoolean")
 class I_StringRotationSpec extends Specification {
 
+    @Unroll
     def'#rotation rotation of #word returns #result'(){
 
         expect:
@@ -19,7 +21,7 @@ class I_StringRotationSpec extends Specification {
         where:
         word            |  rotation         || result
         'waterbottle'   |  'erbottlewat'    || true
-        'god'           |  'dog'            || true
-        'ABCDE'         |  'bottlewat'      || false
+        'god'           |  'odg'            || true
+        'waterbottle'   |  'bottlewaterly'  || false
     }
 }
