@@ -5,12 +5,12 @@ import spock.lang.Specification
  */
 class H_FindPermutationsSpec extends Specification {
 
-    def'find all permutations is successful'(){
+    def'find all permutations is successfulk'(){
         given:
         def input = 'cba'
         def permutations = ['cba', 'bca', 'bac','cab','acb','abc']
 
         expect:
-        H_FindPermutations.findPermutations(input) == permutations
+        H_FindPermutations.findPermutations(input).sort() == permutations.sort()
     }
 }
