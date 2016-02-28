@@ -19,20 +19,20 @@ public class F_EncodeSpacesInString {
         if(spaces == 0){
             return input;
         }
-        int newEnd = (length -1) + spaces * 2;
+
+        int newLength = length + 2*spaces;
         int i = length-1;
-        while(i>=0 && spaces > 0){
-            if(input[i] != ' '){
-                input[newEnd] = input[i];
-                newEnd--;
-            } else {
-                input[newEnd] = '0';
-                input[newEnd-1] = '2';
-                input[newEnd-2] = '%';
-                newEnd -= 3;
-                spaces--;
-            }
-            i--;
+        while(i>0 && spaces>0){
+        	if(input[i] != ' '){
+        		input[newLength-1] = input[i];
+        		newLength--;
+        	} else {
+        		input[newLength-1] = '0';
+        		input[newLength-2] = '2';
+        		input[newLength-3] = '%';
+        		newLength -= 3;
+        	}
+        	i--;
         }
 
         return input;
