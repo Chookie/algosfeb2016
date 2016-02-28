@@ -14,14 +14,14 @@ public class H_FindPermutations {
     }
 
     private static void findPerms(List<String> perms, String prefix, String input){
-    	if(input.length() == 0) {
+    	if(input.length() == 0){
     		perms.add(prefix);
-            return;
+    		return;
     	}
-    	for(int i=0;i<input.length(); i++){
+    	for(int i=0; i<input.length(); i++){
     		char fixedChar = input.charAt(i);
-    		String reamining = input.substring(0,i) + input.substring(i+1,input.length());
-    		findPerms(perms, prefix + fixedChar, reamining);
+    		String remaining = input.substring(0,i) + input.substring(i+1,input.length());
+    		findPerms(perms, prefix + fixedChar, remaining);
     	}
     }
 }
