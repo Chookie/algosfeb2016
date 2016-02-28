@@ -1,5 +1,9 @@
 import spock.lang.Specification
 
+/**
+ * Return the reverse of the given string
+ * Cracking the code interview question 1.2
+ */
 class C_StringReverseSpec extends Specification {
 
     def'reverses string ok'(){
