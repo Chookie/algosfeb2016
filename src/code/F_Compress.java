@@ -22,7 +22,7 @@ public class F_Compress {
      			charCount++;
      		} else {
      			compressed += input.charAt(i-1) + String.valueOf(charCount);
-     			charCount = 1; 
+     			charCount = 1;
      		}
      	}
         compressed += input.charAt(input.length()-1) + String.valueOf(charCount);
